@@ -58,7 +58,6 @@ const Posts = () => {
     .then(res => res.json())
     .then(data => {
       setListPost(data.data.posts);
-      console.log(data.data.posts);
     })
   };
 
@@ -70,27 +69,25 @@ const Posts = () => {
         {
           listPost.length > 0 && listPost.map((item, idx) => {
             return (
-              <>
-                <div className="post-list" key={idx}>
-                  <PostImageWrapper>
-                    <PostImg src={item.data.thumbnail.url} alt={item.data.thumbnail.file_name} />
-                    <PostInfo>
-                      <PostName>{item.data.title}</PostName>
-                      <CommentLikeWrapper>
-                        <PostLike>
-                          <LikeCount>{item.data.total_likes}</LikeCount>
-                          <BsHeartFill />
-                        </PostLike>
-                        <PostComment>
-                          <CommentCount>{item.data.total_comments}</CommentCount>
-                          <MdModeComment />
-                        </PostComment>
-                      </CommentLikeWrapper>
-                    </PostInfo>
-                  </PostImageWrapper>
-                  <PostDescription>{item.data.body.text}</PostDescription>
-                </div>
-              </>
+              <div className="post-list" key={idx}>
+                <PostImageWrapper>
+                  <PostImg src={item.data.thumbnail.url} alt={item.data.thumbnail.file_name} />
+                  <PostInfo>
+                    <PostName>{item.data.title}</PostName>
+                    <CommentLikeWrapper>
+                      <PostLike>
+                        <LikeCount>{item.data.total_likes}</LikeCount>
+                        <BsHeartFill />
+                      </PostLike>
+                      <PostComment>
+                        <CommentCount>{item.data.total_comments}</CommentCount>
+                        <MdModeComment />
+                      </PostComment>
+                    </CommentLikeWrapper>
+                  </PostInfo>
+                </PostImageWrapper>
+                <PostDescription>{item.data.body.text}</PostDescription>
+              </div>
             )
           })
         }
