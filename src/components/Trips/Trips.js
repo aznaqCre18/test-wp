@@ -42,9 +42,8 @@ const Trips = () => {
   }
 
   const _renderListTrip = (data) => {
-    console.log(data)
     return (
-      data.map((item, idx) => {
+      data.length > 0 && data.map((item, idx) => {
         return (
           <div className={`list trip-list-${idx}`} key={idx}>
             <img src={item && item.data && item.data.thumbnail && item.data.thumbnail.url} alt={item && item.data && item.data.thumbnail && item.data.thumbnail.file_name} className="trip-img" />

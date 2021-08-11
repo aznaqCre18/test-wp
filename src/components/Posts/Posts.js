@@ -94,7 +94,7 @@ const Posts = () => {
     <PostsContainer>
       <PostH1>{titleSection.postsTitle}</PostH1>
       <PostsListWrapper>
-        {_renderListPosts(listPost)}
+        {_renderListPosts(listPost.length > 0 && listPost)}
       </PostsListWrapper>
     </PostsContainer>
   )
