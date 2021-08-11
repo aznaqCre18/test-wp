@@ -4,6 +4,10 @@ export const PostsContainer = styled.div`
   width: 95%;
   margin: auto;
   margin-bottom: 16vw;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const PostH1 = styled.h1`

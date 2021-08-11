@@ -10,6 +10,30 @@ export const BenefitContainer = styled.div`
   position: relative;
   z-index: 4;
   padding: 5vw 70px;
+
+  @keyframes benefit {
+    0% {
+      opacity: 0;
+      transform: translateY(200px);
+    };
+
+    25% {
+      opacity: 0.5;
+      transform: translateY(100px);
+    }
+
+    50% {
+      opacity: .8;
+      transform: translateY(60px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  animation: benefit 1s linear;
 `;
 
 export const BenefitH1 = styled.h1`

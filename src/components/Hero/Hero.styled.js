@@ -75,6 +75,19 @@ export const HeroH1 = styled.h1`
     width: 100%;
     font-family: "Poppins Medium"
   }
+
+  @keyframes example {
+    0% {
+      opacity: 0;
+      transform: translateX(-200px);
+    };
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  animation: example .8s ease-in-out;
 `;
 export const HeroP = styled.p`
   width: 70%;
@@ -83,4 +96,17 @@ export const HeroP = styled.p`
   @media screen and (max-width: 768px) {
     width: 100%;
   }
+
+  @keyframes exampleP {
+    0% {
+      opacity: 0;
+      transform: translateX(-200px);
+    };
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  animation: exampleP .8s ease-in-out;
 `;

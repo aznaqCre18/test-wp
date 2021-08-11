@@ -21,4 +21,17 @@ export const LogoImage = styled.img`
   width: 65px;
   cursor: pointer;
   user-select: none;
+
+  @keyframes exampleHeader {
+    from {
+      opacity: 0;
+      transform: translateY(-100px);
+    };
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  animation: exampleHeader .6s ease-in-out;
 `;
