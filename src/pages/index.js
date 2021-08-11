@@ -10,7 +10,7 @@ import Footer from "../components/Footer/Footer";
 
 const IndexPage = () => (
   <Layout>
-    <Seo title="Home" />
+    <Seo title="Odigo" />
     <Hero />
     <Benefit />
     <Trips />
