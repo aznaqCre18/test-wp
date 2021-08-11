@@ -41,23 +41,26 @@ const Trips = () => {
     })
   }
 
+  const _renderListTrip = (data) => {
+    console.log(data)
+    return (
+      data.map((item, idx) => {
+        return (
+          <div className={`list trip-list-${idx}`} key={idx}>
+            <img src={item && item.data && item.data.thumbnail && item.data.thumbnail.url} alt={item && item.data && item.data.thumbnail && item.data.thumbnail.file_name} className="trip-img" />
+            <h3>{item && item.data && item.data.title}</h3>
+          </div>
+        )
+      })
+    )
+  }
+
   return (
     <div className="trips-container">
       <div className="title-wrapper">
           <h1 className="title">{titleSection.tripsTitle}</h1>
       </div>
-      <div className="grid-wrapper">
-        {
-          tripsData.length > 0 && tripsData.map((item, idx) => {
-            return (
-              <div className={`list trip-list-${idx}`} key={idx}>
-                  <img src={item && item.data && item.data.thumbnail && item.data.thumbnail.url} alt={item && item.data && item.data.thumbnail && item.data.thumbnail.file_name} className="trip-img" />
-                  <h3>{item && item.data && item.data.title}</h3>
-              </div>
-            )
-          })
-        }
-      </div>
+      <div className="grid-wrapper">{_renderListTrip(tripsData.length > 0 && tripsData)}</div>
     </div>
   )
 }

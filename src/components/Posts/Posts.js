@@ -61,36 +61,40 @@ const Posts = () => {
     })
   };
 
+  const _renderListPosts = (data) => {
+    return (
+      data.length > 0 && data.map((item, idx) => {
+        return (
+          <div className="post-list" key={idx}>
+            <PostImageWrapper>
+              <PostImg src={item.data.thumbnail.url} alt={item.data.thumbnail.file_name} />
+              <PostInfo>
+                <PostName>{item.data.title}</PostName>
+                <CommentLikeWrapper>
+                  <PostLike>
+                    <LikeCount>{item.data.total_likes}</LikeCount>
+                    <BsHeartFill />
+                  </PostLike>
+                  <PostComment>
+                    <CommentCount>{item.data.total_comments}</CommentCount>
+                    <MdModeComment />
+                  </PostComment>
+                </CommentLikeWrapper>
+              </PostInfo>
+            </PostImageWrapper>
+            <PostDescription>{item.data.body.text}</PostDescription>
+          </div>
+        )
+      })
+    )
+  }
+
 
   return (
     <PostsContainer>
       <PostH1>{titleSection.postsTitle}</PostH1>
       <PostsListWrapper>
-        {
-          listPost.length > 0 && listPost.map((item, idx) => {
-            return (
-              <div className="post-list" key={idx}>
-                <PostImageWrapper>
-                  <PostImg src={item.data.thumbnail.url} alt={item.data.thumbnail.file_name} />
-                  <PostInfo>
-                    <PostName>{item.data.title}</PostName>
-                    <CommentLikeWrapper>
-                      <PostLike>
-                        <LikeCount>{item.data.total_likes}</LikeCount>
-                        <BsHeartFill />
-                      </PostLike>
-                      <PostComment>
-                        <CommentCount>{item.data.total_comments}</CommentCount>
-                        <MdModeComment />
-                      </PostComment>
-                    </CommentLikeWrapper>
-                  </PostInfo>
-                </PostImageWrapper>
-                <PostDescription>{item.data.body.text}</PostDescription>
-              </div>
-            )
-          })
-        }
+        {_renderListPosts(listPost)}
       </PostsListWrapper>
     </PostsContainer>
   )
